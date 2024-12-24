@@ -1,24 +1,144 @@
-//Etape 2
-//Définition de la fonction insertWorkHtml
-function insertWorkHtml(imageUrl, legend, alt) {
-    // Création des éléments nécessaires
+// Etape 3
+// Reprise des éléments du swagger au format json
+  let works = [
+    {
+      "id": 1,
+      "title": "Abajour Tahina",
+      "imageUrl": "http://localhost:5678/images/abajour-tahina1651286843956.png",
+      "categoryId": 1,
+      "userId": 1,
+      "category": {
+        "id": 1,
+        "name": "Objets"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Appartement Paris V",
+      "imageUrl": "http://localhost:5678/images/appartement-paris-v1651287270508.png",
+      "categoryId": 2,
+      "userId": 1,
+      "category": {
+        "id": 2,
+        "name": "Appartements"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Restaurant Sushisen - Londres",
+      "imageUrl": "http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png",
+      "categoryId": 3,
+      "userId": 1,
+      "category": {
+        "id": 3,
+        "name": "Hotels & restaurants"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Villa “La Balisiere” - Port Louis",
+      "imageUrl": "http://localhost:5678/images/la-balisiere1651287350102.png",
+      "categoryId": 2,
+      "userId": 1,
+      "category": {
+        "id": 2,
+        "name": "Appartements"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Structures Thermopolis",
+      "imageUrl": "http://localhost:5678/images/structures-thermopolis1651287380258.png",
+      "categoryId": 1,
+      "userId": 1,
+      "category": {
+        "id": 1,
+        "name": "Objets"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Appartement Paris X",
+      "imageUrl": "http://localhost:5678/images/appartement-paris-x1651287435459.png",
+      "categoryId": 2,
+      "userId": 1,
+      "category": {
+        "id": 2,
+        "name": "Appartements"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Pavillon “Le coteau” - Cassis",
+      "imageUrl": "http://localhost:5678/images/le-coteau-cassis1651287469876.png",
+      "categoryId": 2,
+      "userId": 1,
+      "category": {
+        "id": 2,
+        "name": "Appartements"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Villa Ferneze - Isola d’Elba",
+      "imageUrl": "http://localhost:5678/images/villa-ferneze1651287511604.png",
+      "categoryId": 2,
+      "userId": 1,
+      "category": {
+        "id": 2,
+        "name": "Appartements"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Appartement Paris XVIII",
+      "imageUrl": "http://localhost:5678/images/appartement-paris-xviii1651287541053.png",
+      "categoryId": 2,
+      "userId": 1,
+      "category": {
+        "id": 2,
+        "name": "Appartements"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Bar “Lullaby” - Paris",
+      "imageUrl": "http://localhost:5678/images/bar-lullaby-paris1651287567130.png",
+      "categoryId": 3,
+      "userId": 1,
+      "category": {
+        "id": 3,
+        "name": "Hotels & restaurants"
+      }
+    },
+    {
+      "id": 11,
+      "title": "Hotel First Arte - New Delhi",
+      "imageUrl": "http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png",
+      "categoryId": 3,
+      "userId": 1,
+      "category": {
+        "id": 3,
+        "name": "Hotels & restaurants"
+      }
+    }
+  ]
+// Ajout de la fonction insertWorkHtml avec ses propriétés
+  function insertWorkHtml(imageUrl, legend, alt) {
     const figure = document.createElement("figure");
     const img = document.createElement("img");
     const figcaption = document.createElement("figcaption");
   
-    // Configuration des attributs et du contenu
-    img.src = imageUrl;// URL dynamique
-    img.alt = alt; // Texte alternatif dynamique
-    figcaption.textContent = legend; // Légende dynamique
-  
-    // Assemblage de la figure
+    img.src = imageUrl;
+    img.alt = alt;
+    figcaption.textContent = legend;
+
+// Ajout des éléments img et figcaption comme enfants de figure
     figure.appendChild(img);
     figure.appendChild(figcaption);
-  
-    // Récupération de l'élément parent où insérer la figure
+// Récupération de l'élément parent où insérer la figure
     const gallery = document.querySelector(".gallery");
-  
-    // Ajout de la figure dans la galerie si l'élément existe, sinon msg d'erreur
+// Ajout de la figure dans la galerie si l'élément existe, sinon msg d'erreur
     if (gallery) {
       gallery.appendChild(figure);
     } else {
@@ -26,9 +146,8 @@ function insertWorkHtml(imageUrl, legend, alt) {
     }
   }
   
-  //Appel de la fonction
-  insertWorkHtml(
-    "http://localhost:5678/images/abajour-tahina1651286843956.png", 
-    "Abat jour Etape 2", 
-    "Abat jour Etape 2",
-  );
+// Boucle foreach pour parcourir les données du tableau works
+  works.forEach(work => {
+// Appel à la fonction pour chaque élément du tableau
+  insertWorkHtml(work.imageUrl, work.title, work.title);
+  });
