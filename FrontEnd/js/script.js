@@ -1,5 +1,5 @@
 //Etape 2
-// Définition de la fonction insertWorkHtml
+//Définition de la fonction insertWorkHtml
 function insertWorkHtml(imageUrl, legend, alt) {
     // Création des éléments nécessaires
     const figure = document.createElement("figure");
@@ -7,8 +7,8 @@ function insertWorkHtml(imageUrl, legend, alt) {
     const figcaption = document.createElement("figcaption");
   
     // Configuration des attributs et du contenu
-    img.src = imageUrl;    // URL dynamique
-    img.alt = alt;         // Texte alternatif dynamique
+    img.src = imageUrl;// URL dynamique
+    img.alt = alt; // Texte alternatif dynamique
     figcaption.textContent = legend; // Légende dynamique
   
     // Assemblage de la figure
@@ -26,7 +26,7 @@ function insertWorkHtml(imageUrl, legend, alt) {
     }
   }
   
-  // Test de la fonction
+  //Appel de la fonction
   insertWorkHtml(
     "http://localhost:5678/images/abajour-tahina1651286843956.png", 
     "Abat jour Etape 2", 
