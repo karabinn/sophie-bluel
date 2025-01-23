@@ -2,7 +2,9 @@
 //créer un évènement à la validation du formulaire et appeler connexion(email, mdp)
 
 // Gérer l'envoi du formulaire
-document.getElementById("loginForm").addEventListener("submit", function (event) {
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", function (event) {
     event.preventDefault(); // Empêcher le rechargement de la page
 
     // Récupérer les valeurs du formulaire
@@ -11,4 +13,4 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 
     // Appeler la fonction connexion
     connexion(email, password);
-});
+  });

@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function ( ) {
-    getWorks();
-    chargerEtAfficherWorks();
-    getCategories();
-    espaceAdmin();
-})
+document.addEventListener("DOMContentLoaded", function () {
+  chargerEtAfficherWorks();
+  getCategories();
+  espaceAdmin();
+});
