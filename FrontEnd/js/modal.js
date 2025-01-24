@@ -198,7 +198,7 @@ function afficherFormAjout() {
 </form>
     `;
 
-  //Ajout des boutons return + close ici car sinon bug
+  //Ajout des boutons return + close ici 
   modalContent.appendChild(buttonReturn);
   modalContent.appendChild(buttonClose);
 
@@ -261,6 +261,11 @@ function afficherFormAjout() {
   inputFile.addEventListener("change", function () {
     const image = this.files[0];
     console.log(image);
+    if (image.size > 4 * 1024 * 1024) { // Vérifie si la taille dépasse 4 Mo
+      alert("La taille de l'image ne doit pas dépasser 4 Mo.");
+      this.value = ""; // Réinitialise le champ pour obliger l'utilisateur à choisir une nouvelle image
+      return;
+    }
     const reader = new FileReader();
     reader.onload = () => {
       const imguRL = reader.result;
