@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("authToken");
-  console.log(token);
+  console.log("Token présent");
 
   if (token) {
     const titreProjets = document.getElementById("mes-projets-titre");
@@ -95,8 +95,7 @@ function supprimerImage(imageId) {
           const figureContainer = imageInGallery.parentElement;
           figureContainer.remove();
         }
-        console.log("Image supprimée avec succès !");
-        location.reload();
+        chargerEtAfficherWorks();
       } else {
         console.error("Erreur lors de la suppression de l'image.");
       }
@@ -260,7 +259,6 @@ function afficherFormAjout() {
 
   inputFile.addEventListener("change", function () {
     const image = this.files[0];
-    console.log(image);
     if (image.size > 4 * 1024 * 1024) { // Vérifie si la taille dépasse 4 Mo
       alert("La taille de l'image ne doit pas dépasser 4 Mo.");
       this.value = ""; // Réinitialise le champ pour obliger l'utilisateur à choisir une nouvelle image
